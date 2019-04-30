@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.senac.pi3</groupId>
+	
+	<artifactId>Petshop_mais</artifactId>
+	
+	<packaging>war</packaging>
+	
+	<version>0.0.1-SNAPSHOT</version>
+	
+	<name>Petshop_mais Maven Webapp</name>
+	
+	<developers>
+	
+		<developer>
+			<id>alexandre-vinicius</id>
+			<name>AlexAndre Vinicius</name>
+			<organization>Senac</organization>
+		</developer>
+		
+	</developers>
+	
+	<url>http://maven.apache.org</url>
+	
+	<dependencies>
+	
+		<dependency>
+		
+			<groupId>junit</groupId>
+			
+			<artifactId>junit</artifactId>
+			
+			<version>3.8.1</version>
+			
+			<scope>test</scope>
+			
+		</dependency>
+		
+	</dependencies>
+	
+	<build>
+	
+		<finalName>Petshop_mais</finalName>
+		
+	</build>
+	
+</project>
