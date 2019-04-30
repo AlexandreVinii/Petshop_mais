@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class HomeServlet
  */
 
-@WebServlet(name = "home", urlPatterns = { "/home" })
-public class HomeServlet extends HttpServlet {
+@WebServlet(name = "produto", urlPatterns = { "/produto" })
+public class Produto extends HttpServlet {
 
 	/**
 	 * 
@@ -22,7 +22,7 @@ public class HomeServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public HomeServlet() {
+	public Produto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -34,7 +34,7 @@ public class HomeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("WEB-INF/index.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/produto.jsp").forward(request, response);
 	}
 
 }
