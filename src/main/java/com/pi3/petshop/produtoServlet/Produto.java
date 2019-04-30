@@ -1,4 +1,4 @@
-package com.pi3.petshop.servlets;
+package com.pi3.petshop.produtoServlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
