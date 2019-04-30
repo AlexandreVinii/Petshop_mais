@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 
 @WebServlet(name = "produto", urlPatterns = { "/produto" })
-public class Produto extends HttpServlet {
+public class ListaProduto extends HttpServlet {
 
 	/**
 	 * 
@@ -22,7 +22,7 @@ public class Produto extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Produto() {
+	public ListaProduto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
