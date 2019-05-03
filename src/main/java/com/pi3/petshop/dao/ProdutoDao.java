@@ -13,7 +13,7 @@ import java.sql.Statement;
 
 public class ProdutoDao {
 
-	public static void inserirProduto(Produto produto) throws SQLException {
+	public static void inserirProduto(Produto produto) throws SQLException, ClassNotFoundException {
 
 		long id_produto = 0;
 

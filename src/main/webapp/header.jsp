@@ -30,7 +30,7 @@
 						</li>
 						<li class="footer"><a href="#">Ver todas notificações</a></li>
 					</ul></li>
-				<li><a href="" alt='Sair'><i class="fa fa-sign-in"></i></a></li>
+				<li><a href="#" ><i class="fa fa-sign-in"></i></a></li>
 			</ul>
 
 		</div>

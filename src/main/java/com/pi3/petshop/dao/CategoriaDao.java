@@ -9,9 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 //import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class CategoriaDao {
-	public static void inserirCategoria(Categoria categoria) throws SQLException {
+	public static void inserirCategoria(Categoria categoria) throws SQLException, ClassNotFoundException {
 
 		String query = "INSERT INTO categoria (nome, descricao) VALUES (?,?)";
 
@@ -36,7 +37,7 @@ public class CategoriaDao {
 	}
 	
 	
-	public static Categoria obterCategoria(Long id) throws SQLException{
+	public static Categoria obterCategoria(Long id) throws SQLException, ClassNotFoundException{
         Categoria categoria = new Categoria();
         
         String query = "SELECT * FROM categoria WHERE (id = ?)";
@@ -56,5 +57,27 @@ public class CategoriaDao {
             }
         }
         return categoria;
+    }
+	public static ArrayList<Categoria> getCategorias() throws SQLException, ClassNotFoundException{
+        String query = "SELECT * FROM categoria";
+        
+        ArrayList<Categoria> categorias = new ArrayList<>();
+        
+        try (Connection conn = ConnectionUtils.getConnection();
+                PreparedStatement stmt = conn.prepareStatement(query)) {
+            
+            try (ResultSet resultados = stmt.executeQuery()) {
+                
+                while(resultados.next()){
+                    Categoria categoria = new Categoria();
+                    categoria.setId(resultados.getLong("id"));
+                    categoria.setNome(resultados.getString("nome"));
+                    categoria.setDescricao(resultados.getString("descricao"));
+                    
+                    categorias.add(categoria);
+                }
+            }
+        }
+        return categorias;      
     }
 }

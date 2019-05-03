@@ -13,9 +13,11 @@ import java.util.Properties;
 public class ConnectionUtils {
 	// Armazena o objeto de conexão
 	private static Connection connection = null;
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
 	// Obtém uma conexão com o banco de dados
-	public static Connection getConnection() throws SQLException {
+	public static Connection getConnection() throws SQLException, ClassNotFoundException {
+		Class.forName(DRIVER);
 		// Só tenta abrir uma conexão se esta já não
 		// existir ou estiver fechada
 		if (connection == null || connection.isClosed()) {
@@ -41,7 +43,6 @@ public class ConnectionUtils {
 //		String PASSWORD = "alexandre22";
 //		String url = "jdbc:mysql://localhost:3306/petshop_database?user=root";
 //
-//		Connection connection = null;
 //
 //		try {
 //			

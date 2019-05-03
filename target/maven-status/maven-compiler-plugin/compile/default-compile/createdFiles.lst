@@ -1,0 +1,9 @@
+com/pi3/petshop/servlets/HomeServlet.class
+com/pi3/petshop/model/Categoria.class
+com/pi3/petshop/dao/ProdutoDao.class
+com/pi3/petshop/connect/Connectionfakes.class
+com/pi3/petshop/connect/ConnectionUtils.class
+com/pi3/petshop/dao/CategoriaDao.class
+com/pi3/petshop/produtoServlet/ListaProduto.class
+com/pi3/petshop/produtoServlet/createProduto.class
+com/pi3/petshop/model/Produto.class

@@ -45,7 +45,21 @@ public class createProduto extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("WEB-INF/create_produto.jsp").forward(request, response);
+
+		RequestDispatcher dispatcher
+        = request.getRequestDispatcher("WEB-INF/create_produto.jsp");
+		
+		ArrayList<Categoria> listaCategoria = null;
+		try {
+            listaCategoria = CategoriaDao.getCategorias();
+          
+          request.setAttribute("categorias", listaCategoria);
+           
+            dispatcher.forward(request, response);
+            
+       } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(createProduto.class.getName()).log(Level.SEVERE, null, ex);
+      }
 	}
 
 	@Override
@@ -61,7 +75,7 @@ public class createProduto extends HttpServlet {
 		String descricao = request.getParameter("descricao");
 		String peso = request.getParameter("peso");
 
-		Long idCategoria = Long.parseLong(request.getParameter("categoria"));
+		Long idCategoria = Long.parseLong("2");
 
 		Categoria categoria = new Categoria();
 
@@ -71,6 +85,9 @@ public class createProduto extends HttpServlet {
 		} catch (SQLException ex) {
 			Logger.getLogger(createProduto.class.getName()).log(Level.SEVERE, null, ex);
 			message = "Falha ao localizar categoria selecionada";
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 		Produto produto = new Produto(nome, descricao, peso, valor, categoria);
@@ -78,7 +95,7 @@ public class createProduto extends HttpServlet {
 			ProdutoDao.inserirProduto(produto);
 
 			message = "Produto cadastrado com sucesso";
-		} catch (SQLException ex) {
+		} catch (SQLException | ClassNotFoundException ex) {
 			Logger.getLogger(createProduto.class.getName()).log(Level.SEVERE, null, ex);
 			message = "Falha ao cadastrar Produto";
 		}
